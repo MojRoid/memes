@@ -13,20 +13,15 @@ ext {
     // RELEASE                                                                                    //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
+    timber_version = '4.5.1'
     support_library_version = '27.0.2'
-    play_services_version = '11.4.2'
-    kotlin_coroutines_version = '0.19.3'
-    guava_version = '23.1-android'
     dagger_version = '2.12'
     rxAndroid_version = '2.0.1'
     rxJava_version = '2.1.7'
-    auto_value_version = '1.5'
-    auto_value_gson_version = '0.6.0'
-    auto_value_parcel_version = '0.2.5'
-    okhttp_version = '3.9.0'
     retrofit_version = '2.3.0'
-    gson_version = '2.8.2'
-    timber_version = '4.5.1'
+    okhttp_version = '3.9.0'
+    moshi_version = '1.5.0'
+    kotshi_version = '0.3.0-beta3'
     picasso_version = '2.5.2'
     architecture_components_version = '1.0.0'
 

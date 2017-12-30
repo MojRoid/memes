@@ -1,20 +1,19 @@
 package moj.memes.base.network.injection
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import moj.memes.base.BuildConfig
 import moj.memes.base.injection.scopes.PerApplication
 import moj.memes.base.network.api.ImgFlipApi
-import moj.memes.base.network.parsing.AutoValueGsonFactory
+import moj.memes.base.network.parsing.ApplicationJsonAdapterFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 @Module
@@ -48,15 +47,11 @@ class NetworkModule {
 
     @Provides
     @PerApplication
-    fun provideGsonConverterFactory(gson: Gson): Converter.Factory = GsonConverterFactory.create(gson)
+    fun provideMoshi(): Moshi = Moshi.Builder().add(ApplicationJsonAdapterFactory.INSTANCE).build()
 
     @Provides
     @PerApplication
-    fun provideGson(): Gson {
-        return GsonBuilder()
-                .registerTypeAdapterFactory(AutoValueGsonFactory.create())
-                .create()
-    }
+    fun provideConverterFactory(moshi: Moshi): Converter.Factory = MoshiConverterFactory.create(moshi)
 
     @Provides
     @PerApplication

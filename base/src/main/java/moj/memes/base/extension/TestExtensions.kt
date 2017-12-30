@@ -1,8 +1,9 @@
 package moj.memes.base.extension
 
-import com.google.gson.Gson
+import com.squareup.moshi.Moshi
 import java.io.BufferedReader
 import java.io.FileReader
+
 
 fun readFileAsString(file: Any, filePath: String): String {
     val classLoader = file.javaClass.classLoader
@@ -22,8 +23,9 @@ fun readFileAsString(file: Any, filePath: String): String {
 fun <T> Any.jsonToObject(
         clazz: Class<T>,
         filePath: String,
-        gson: Gson = Gson()
+        moshi: Moshi
 ): T {
     val json = readFileAsString(this, filePath)
-    return gson.fromJson(json, clazz)
+    val jsonAdapter = moshi.adapter(clazz)
+    return jsonAdapter.fromJson(json) ?: clazz.newInstance()
 }

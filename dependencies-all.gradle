@@ -1,4 +1,4 @@
-def dependencyGroup(Closure closure) {
+def Group(Closure closure) {
     closure.delegate = dependencies
     return closure
 }
@@ -9,16 +9,13 @@ ext {
     // CORE                                                                                       //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    core = dependencyGroup {
+    core = Group {
 
         // Libraries //
         implementation fileTree(dir: 'libs', include: ['*.jar'])
 
         // Kotlin //
         implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-        // Guava //
-        implementation "com.google.guava:guava:$guava_version"
 
         // Timber //
         implementation "com.jakewharton.timber:timber:$timber_version"
@@ -28,7 +25,7 @@ ext {
     // SUPPORT                                                                                    //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    support = dependencyGroup {
+    support = Group {
 
         // Support Library //
         implementation "com.android.support:support-compat:$support_library_version"
@@ -42,7 +39,7 @@ ext {
     // DAGGER                                                                                     //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    dagger = dependencyGroup {
+    dagger = Group {
 
         // Dagger //
         implementation "com.google.dagger:dagger:$dagger_version"
@@ -56,7 +53,7 @@ ext {
     // RXJAVA                                                                                     //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    rxJava = dependencyGroup {
+    rxJava = Group {
 
         // RxJava //
         implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_version"
@@ -67,25 +64,21 @@ ext {
     // NETWORKING                                                                                 //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    networking = dependencyGroup {
+    networking = Group {
 
         // Retrofit //
         implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-        implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+        implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
         implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
 
         // OkHttp //
         implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
         implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
-        // Gson //
-        implementation "com.google.code.gson:gson:$gson_version"
-
-        // AutoValue //
-        compileOnly "com.google.auto.value:auto-value:$auto_value_version"
-        kapt "com.google.auto.value:auto-value:$auto_value_version"
-        compileOnly "com.ryanharter.auto.value:auto-value-gson:$auto_value_gson_version"
-        kapt "com.ryanharter.auto.value:auto-value-gson:$auto_value_gson_version"
+        // Moshi //
+        implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+        implementation "se.ansman.kotshi:api:$kotshi_version"
+        kapt "se.ansman.kotshi:compiler:$kotshi_version"
 
         // Picasso //
         implementation "com.squareup.picasso:picasso:$picasso_version"
@@ -95,7 +88,7 @@ ext {
     // ARCHITECTURE COMPONENTS                                                                    //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    architectureComponents = dependencyGroup {
+    architectureComponents = Group {
 
         // Architecture Components //
         implementation "android.arch.lifecycle:extensions:$architecture_components_version"
@@ -107,7 +100,7 @@ ext {
     // TESTING                                                                                    //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    testing = dependencyGroup {
+    testing = Group {
 
         // JUnit //
         testImplementation("junit:junit:$junit_version") {

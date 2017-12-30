@@ -1,11 +1,10 @@
 package moj.memes.list.domain
 
 import com.google.common.truth.Truth.assertThat
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import com.squareup.moshi.Moshi
 import moj.memes.base.extension.jsonToObject
 import moj.memes.base.network.model.MemesDto
-import moj.memes.base.network.parsing.AutoValueGsonFactory
+import moj.memes.base.network.parsing.ApplicationJsonAdapterFactory
 import moj.memes.list.model.Meme
 import org.junit.Before
 import org.junit.Test
@@ -15,7 +14,7 @@ class MapperTest {
 
     private lateinit var subject: Mapper
 
-    private val gson: Gson = GsonBuilder().registerTypeAdapterFactory(AutoValueGsonFactory.create()).create()
+    private val moshi: Moshi = Moshi.Builder().add(ApplicationJsonAdapterFactory.INSTANCE).build()
     private lateinit var dto: MemesDto
     private var actual: List<Meme>? = null
 
@@ -68,7 +67,7 @@ class MapperTest {
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     private fun givenDto(filePath: String) {
-        dto = jsonToObject(MemesDto::class.java, filePath, gson)
+        dto = jsonToObject(MemesDto::class.java, filePath, moshi)
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

@@ -15,5 +15,4 @@ dependencies {
     networking()
     architectureComponents()
     testing()
-    implementation("junit:junit:$junit_version") // Used for writing the RxRule. TODO: improve
 }
