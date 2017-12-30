@@ -1,4 +1,4 @@
-package moj.memes.list.view.adapter
+package moj.memes.list.view.widget.list.adapter
 
 import android.support.v7.widget.RecyclerView
 import moj.memes.list.model.Meme

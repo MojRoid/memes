@@ -4,10 +4,10 @@ Simple MVVM example.
 
 **Features:**
 
-- Kotlin
+- 100% Kotlin
 - Architecture components
-- MVVM
 - Feature modules
+- Modular views, known as 'widgets'
 
 **TODO:**
 

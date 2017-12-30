@@ -2,7 +2,6 @@ package moj.memes.list.injection
 
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
-import android.support.v7.widget.LinearLayoutManager
 import dagger.Module
 import dagger.Provides
 import moj.memes.base.injection.qualifiers.ForActivity
@@ -12,8 +11,8 @@ import moj.memes.list.domain.FetchMemesUseCaseImpl
 import moj.memes.list.repository.MemesRepository
 import moj.memes.list.repository.MemesRepositoryImpl
 import moj.memes.list.view.ListActivity
-import moj.memes.list.view.adapter.MemesAdapter
-import moj.memes.list.view.adapter.MemesAdapterImpl
+import moj.memes.list.view.widget.list.injection.ListWidgetModule
+import moj.memes.list.view.widget.state.injection.ListStateWidgetModule
 import moj.memes.list.viewmodel.ListViewModel
 import moj.memes.list.viewmodel.ListViewModelFactory
 
@@ -21,7 +20,9 @@ import moj.memes.list.viewmodel.ListViewModelFactory
     ListModule.Repository::class,
     ListModule.UseCase::class,
     ListModule.ViewModel::class,
-    ListModule.View::class
+    ListModule.View::class,
+    ListStateWidgetModule::class,
+    ListWidgetModule::class
 ])
 class ListModule {
 
@@ -53,14 +54,5 @@ class ListModule {
         @PerActivity
         @ForActivity
         fun provideContext(activity: ListActivity): Context = activity
-
-        @Provides
-        @PerActivity
-        fun provideLayoutManager(@ForActivity context: Context): LinearLayoutManager =
-                LinearLayoutManager(context)
-
-        @Provides
-        @PerActivity
-        fun provideMemesAdapter(adapter: MemesAdapterImpl): MemesAdapter = adapter
     }
 }

@@ -1,4 +1,4 @@
-package moj.memes.list.view.adapter
+package moj.memes.list.view.widget.list.adapter
 
 
 import android.view.View
