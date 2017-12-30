@@ -1,0 +1,26 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Config                                                                                         //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Config {
+    Properties commonProperties
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Pull in config properties                                                                      //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ext {
+    config = new Config()
+    def basePath = rootDir.absolutePath + "/config/"
+
+    config.commonProperties = new Properties()
+    def commonPropertiesFileName = "common.properties"
+    config.commonProperties.load(new FileInputStream(rootProject.file((basePath + commonPropertiesFileName))))
+}
+
+android {
+    defaultConfig {
+        buildConfigField "String", "IMG_FLIP_BASE_URL", "\"${config.commonProperties.img_flip_base_url}\""
+    }
+}

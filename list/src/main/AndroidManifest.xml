@@ -1,0 +1,22 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="moj.memes.list">
+
+    <application>
+
+        <activity
+            android:name="moj.memes.list.view.ListActivity"
+            android:theme="@style/BaseAppTheme">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>

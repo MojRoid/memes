@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "data": {
+    "memes": [
+      {
+        "id": "61579",
+        "name": "One Does Not Simply",
+        "url": "https://i.imgflip.com/1bij.jpg",
+        "width": 568,
+        "height": 335
+      },
+      {
+        "id": "438680",
+        "name": "Batman Slapping Robin",
+        "url": "https://i.imgflip.com/9ehk.jpg",
+        "width": 400,
+        "height": 387
+      },
+      {
+        "id": "93895088",
+        "name": "Expanding Brain",
+        "url": "https://i.imgflip.com/1jwhww.jpg",
+        "width": 857,
+        "height": 1202
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingBottom="32dp">
+
+    <ImageView
+        android:id="@+id/meme_image"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:src="@android:drawable/gallery_thumb"
+        android:scaleType="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/meme_image"
+        android:orientation="vertical"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:id="@+id/meme_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/outer_space"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="The Godfather" />
+
+    </LinearLayout>
+
+</RelativeLayout>

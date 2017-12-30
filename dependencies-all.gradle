@@ -1,0 +1,134 @@
+def dependencyGroup(Closure closure) {
+    closure.delegate = dependencies
+    return closure
+}
+
+ext {
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // CORE                                                                                       //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    core = dependencyGroup {
+
+        // Libraries //
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+        // Kotlin //
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+        // Guava //
+        implementation "com.google.guava:guava:$guava_version"
+
+        // Timber //
+        implementation "com.jakewharton.timber:timber:$timber_version"
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // SUPPORT                                                                                    //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    support = dependencyGroup {
+
+        // Support Library //
+        implementation "com.android.support:support-compat:$support_library_version"
+        implementation "com.android.support:appcompat-v7:$support_library_version"
+        implementation "com.android.support:cardview-v7:$support_library_version"
+        implementation "com.android.support:recyclerview-v7:$support_library_version"
+        implementation "com.android.support:design:$support_library_version"
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // DAGGER                                                                                     //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    dagger = dependencyGroup {
+
+        // Dagger //
+        implementation "com.google.dagger:dagger:$dagger_version"
+        kapt "com.google.dagger:dagger-compiler:$dagger_version"
+        implementation "com.google.dagger:dagger-android:$dagger_version"
+        implementation "com.google.dagger:dagger-android-support:$dagger_version"
+        kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // RXJAVA                                                                                     //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    rxJava = dependencyGroup {
+
+        // RxJava //
+        implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_version"
+        implementation "io.reactivex.rxjava2:rxjava:$rxJava_version"
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // NETWORKING                                                                                 //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    networking = dependencyGroup {
+
+        // Retrofit //
+        implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+        implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+        implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+        // OkHttp //
+        implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+        implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+        // Gson //
+        implementation "com.google.code.gson:gson:$gson_version"
+
+        // AutoValue //
+        compileOnly "com.google.auto.value:auto-value:$auto_value_version"
+        kapt "com.google.auto.value:auto-value:$auto_value_version"
+        compileOnly "com.ryanharter.auto.value:auto-value-gson:$auto_value_gson_version"
+        kapt "com.ryanharter.auto.value:auto-value-gson:$auto_value_gson_version"
+
+        // Picasso //
+        implementation "com.squareup.picasso:picasso:$picasso_version"
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // ARCHITECTURE COMPONENTS                                                                    //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    architectureComponents = dependencyGroup {
+
+        // Architecture Components //
+        implementation "android.arch.lifecycle:extensions:$architecture_components_version"
+        implementation "android.arch.lifecycle:reactivestreams:$architecture_components_version"
+        kapt "android.arch.lifecycle:compiler:$architecture_components_version"
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // TESTING                                                                                    //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    testing = dependencyGroup {
+
+        // JUnit //
+        testImplementation("junit:junit:$junit_version") {
+            exclude group: 'org.hamcrest'
+        }
+
+        // Truth //
+        testImplementation("com.google.truth:truth:$truth_version") {
+            transitive = false
+        }
+
+        // Mockito //
+        testImplementation "org.mockito:mockito-core:$mockito_version"
+        testImplementation "org.mockito:mockito-inline:$mockito_version"
+
+        // Robolectric //
+        testImplementation("org.robolectric:robolectric:$robolectric_version") {
+            exclude group: 'org.assertj'
+        }
+
+        // Architecture Components //
+        testImplementation "android.arch.core:core-testing:$architecture_components_version"
+    }
+}

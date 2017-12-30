@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- *************************************************************************************** -->
+    <!-- BASE APPLICATION THEME                                                                  -->
+    <!-- *************************************************************************************** -->
+
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/blue_violet</item>
+        <item name="colorPrimaryDark">@color/gigas</item>
+        <item name="colorAccent">@color/blue_violet</item>
+    </style>
+
+</resources>
