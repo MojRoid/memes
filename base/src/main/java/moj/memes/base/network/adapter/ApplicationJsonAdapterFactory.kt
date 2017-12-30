@@ -1,4 +1,4 @@
-package moj.memes.base.network.parsing
+package moj.memes.base.network.adapter
 
 import com.squareup.moshi.JsonAdapter
 import se.ansman.kotshi.KotshiJsonAdapterFactory

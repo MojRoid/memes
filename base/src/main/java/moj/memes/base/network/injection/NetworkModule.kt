@@ -6,7 +6,7 @@ import dagger.Provides
 import moj.memes.base.BuildConfig
 import moj.memes.base.injection.scopes.PerApplication
 import moj.memes.base.network.api.ImgFlipApi
-import moj.memes.base.network.parsing.ApplicationJsonAdapterFactory
+import moj.memes.base.network.adapter.ApplicationJsonAdapterFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
