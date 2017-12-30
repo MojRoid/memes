@@ -5,7 +5,7 @@ import se.ansman.kotshi.JsonSerializable
 
 /**
  * Gone with a quick and simple approach using generated type adapters (which works faster
- * than reflection based GSON serialization).
+ * than reflection based serialization).
  * <p>
  * Could have also manually parsed the response in a traditional type adapter:
  * - Pros: have fine grain control during parsing, useful for flattening responses into
