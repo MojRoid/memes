@@ -1,10 +1,10 @@
-package moj.memes.list.view.widget.state.injection
+package moj.memes.list.widget.state.injection
 
 import dagger.Module
 import dagger.Provides
 import moj.memes.base.injection.scopes.PerActivity
-import moj.memes.list.view.widget.state.ListStateWidget
-import moj.memes.list.view.widget.state.ListStateWidgetImpl
+import moj.memes.list.widget.state.ListStateWidget
+import moj.memes.list.widget.state.ListStateWidgetImpl
 
 @Module
 class ListStateWidgetModule {

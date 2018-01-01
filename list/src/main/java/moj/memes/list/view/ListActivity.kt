@@ -5,8 +5,8 @@ import android.os.Bundle
 import moj.memes.base.extension.initWidgets
 import moj.memes.base.view.BaseActivity
 import moj.memes.list.R
-import moj.memes.list.view.widget.list.ListWidget
-import moj.memes.list.view.widget.state.ListStateWidget
+import moj.memes.list.widget.list.ListWidget
+import moj.memes.list.widget.state.ListStateWidget
 import moj.memes.list.viewmodel.ListViewModel
 import moj.memes.list.viewmodel.ListViewModel.State
 import javax.inject.Inject

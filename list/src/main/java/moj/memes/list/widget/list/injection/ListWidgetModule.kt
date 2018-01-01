@@ -1,4 +1,4 @@
-package moj.memes.list.view.widget.list.injection
+package moj.memes.list.widget.list.injection
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
@@ -6,10 +6,10 @@ import dagger.Module
 import dagger.Provides
 import moj.memes.base.injection.qualifiers.ForActivity
 import moj.memes.base.injection.scopes.PerActivity
-import moj.memes.list.view.widget.list.ListWidget
-import moj.memes.list.view.widget.list.ListWidgetImpl
-import moj.memes.list.view.widget.list.adapter.MemesAdapter
-import moj.memes.list.view.widget.list.adapter.MemesAdapterImpl
+import moj.memes.list.widget.list.ListWidget
+import moj.memes.list.widget.list.ListWidgetImpl
+import moj.memes.list.widget.list.adapter.MemesAdapter
+import moj.memes.list.widget.list.adapter.MemesAdapterImpl
 
 @Module
 class ListWidgetModule {

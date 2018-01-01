@@ -1,7 +1,7 @@
-package moj.memes.list.view.widget.state
+package moj.memes.list.widget.state
 
 import kotlinx.android.synthetic.main.activity_list.*
-import moj.memes.base.view.widget.BaseWidget
+import moj.memes.base.widget.BaseWidget
 import javax.inject.Inject
 
 private const val STATE_CONTENT = 0

@@ -1,8 +1,7 @@
-package moj.memes.list.view.widget.list.adapter
+package moj.memes.list.widget.list.adapter
 
 import android.support.v7.widget.RecyclerView
 import moj.memes.list.model.Meme
-
 
 abstract class MemesAdapter : RecyclerView.Adapter<MemeViewHolder>() {
 

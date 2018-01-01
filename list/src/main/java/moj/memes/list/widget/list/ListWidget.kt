@@ -1,6 +1,6 @@
-package moj.memes.list.view.widget.list
+package moj.memes.list.widget.list
 
-import moj.memes.base.view.widget.Widget
+import moj.memes.base.widget.Widget
 import moj.memes.list.model.Meme
 
 interface ListWidget : Widget {

@@ -1,4 +1,4 @@
-package moj.memes.base.view.widget
+package moj.memes.base.widget
 
 import android.arch.lifecycle.Lifecycle
 import android.content.Context

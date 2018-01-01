@@ -11,8 +11,8 @@ import moj.memes.list.domain.FetchMemesUseCaseImpl
 import moj.memes.list.repository.MemesRepository
 import moj.memes.list.repository.MemesRepositoryImpl
 import moj.memes.list.view.ListActivity
-import moj.memes.list.view.widget.list.injection.ListWidgetModule
-import moj.memes.list.view.widget.state.injection.ListStateWidgetModule
+import moj.memes.list.widget.list.injection.ListWidgetModule
+import moj.memes.list.widget.state.injection.ListStateWidgetModule
 import moj.memes.list.viewmodel.ListViewModel
 import moj.memes.list.viewmodel.ListViewModelFactory
 

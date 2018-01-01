@@ -1,6 +1,6 @@
-package moj.memes.list.view.widget.state
+package moj.memes.list.widget.state
 
-import moj.memes.base.view.widget.Widget
+import moj.memes.base.widget.Widget
 
 interface ListStateWidget : Widget {
 
