@@ -13,6 +13,10 @@ class ListViewModelImpl(
         state.addSource(fetchMemesUseCase.getLiveData(), ::onFetchMemesResult)
     }
 
+    override fun onCleared() {
+        fetchMemesUseCase.cleanUp()
+    }
+
     override fun getState(): LiveData<State> = state
 
     override fun fetchMemes() {
