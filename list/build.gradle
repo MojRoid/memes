@@ -8,11 +8,10 @@ apply from: '../dependencies-all.gradle'
 
 dependencies {
     core()
-    support()
-    dagger()
-    rxJava()
-    networking()
-    architectureComponents()
+    network()
+    repository()
+    viewModel()
+    view()
     testing()
 
     implementation project(path: ':base')

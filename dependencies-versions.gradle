@@ -4,7 +4,7 @@ ext {
     // BUILD                                                                                      //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    kotlin_version = '1.2.0'
+    kotlin_version = '1.2.10'
     build_tools_version = "27.0.3"
     min_sdk_version = 21
     target_sdk_version = 27
@@ -21,7 +21,7 @@ ext {
     retrofit_version = '2.3.0'
     okhttp_version = '3.9.0'
     moshi_version = '1.5.0'
-    kotshi_version = '0.3.0-beta3'
+    kotshi_version = '0.3.0'
     picasso_version = '2.5.2'
     architecture_components_version = '1.0.0'
 

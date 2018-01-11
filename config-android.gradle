@@ -13,15 +13,6 @@ android {
     defaultConfig {
         minSdkVersion min_sdk_version
         targetSdkVersion target_sdk_version
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath true
-                arguments = [
-                        'autovaluegson.defaultCollectionsToEmpty': 'true'
-                ]
-            }
-        }
     }
 }
 

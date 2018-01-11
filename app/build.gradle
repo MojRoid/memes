@@ -32,7 +32,6 @@ android {
         versionCode versionMajor * 100000 + versionMinor * 1000 + versionPatch * 10
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
 
         buildTypes {
             debug {
@@ -49,10 +48,10 @@ android {
 
 dependencies {
     core()
-    support()
-    dagger()
-    networking()
-    architectureComponents()
+    network()
+    repository()
+    viewModel()
+    view()
 
     implementation project(path: ':base')
     implementation project(path: ':list')
