@@ -1,19 +1,19 @@
-package moj.memes.list.widget.list
+package moj.memes.list.viewslice.list
 
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.OnLifecycleEvent
 import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_list.*
-import moj.memes.base.widget.BaseWidget
+import moj.memes.base.viewslice.BaseViewSlice
 import moj.memes.list.model.Meme
-import moj.memes.list.widget.list.adapter.MemesAdapter
+import moj.memes.list.viewslice.list.adapter.MemesAdapter
 import javax.inject.Inject
 
-class ListWidgetImpl @Inject constructor(
+class ListViewSliceImpl @Inject constructor(
         private val layoutManager: LinearLayoutManager,
         private val adapter: MemesAdapter
-) : BaseWidget(),
-        ListWidget {
+) : BaseViewSlice(),
+        ListViewSlice {
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun onCreate() {

@@ -1,4 +1,4 @@
-package moj.memes.list.widget.list.adapter
+package moj.memes.list.viewslice.list.adapter
 
 import android.view.View
 import com.squareup.picasso.Picasso

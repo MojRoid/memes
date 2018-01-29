@@ -1,16 +1,16 @@
-package moj.memes.list.widget.state
+package moj.memes.list.viewslice.state
 
 import kotlinx.android.synthetic.main.activity_list.*
-import moj.memes.base.widget.BaseWidget
+import moj.memes.base.viewslice.BaseViewSlice
 import javax.inject.Inject
 
 private const val STATE_CONTENT = 0
 private const val STATE_LOADING = 1
 private const val STATE_ERROR = 2
 
-class ListStateWidgetImpl @Inject constructor(
-) : BaseWidget(),
-        ListStateWidget {
+class ListStateViewSliceImpl @Inject constructor(
+) : BaseViewSlice(),
+        ListStateViewSlice {
 
     override fun showLoading() {
         showState(STATE_LOADING)

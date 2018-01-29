@@ -1,4 +1,4 @@
-package moj.memes.list.widget.list.injection
+package moj.memes.list.viewslice.list.injection
 
 import android.content.Context
 import android.support.v7.widget.LinearLayoutManager
@@ -6,17 +6,17 @@ import dagger.Module
 import dagger.Provides
 import moj.memes.base.injection.qualifiers.ForActivity
 import moj.memes.base.injection.scopes.PerActivity
-import moj.memes.list.widget.list.ListWidget
-import moj.memes.list.widget.list.ListWidgetImpl
-import moj.memes.list.widget.list.adapter.MemesAdapter
-import moj.memes.list.widget.list.adapter.MemesAdapterImpl
+import moj.memes.list.viewslice.list.ListViewSlice
+import moj.memes.list.viewslice.list.ListViewSliceImpl
+import moj.memes.list.viewslice.list.adapter.MemesAdapter
+import moj.memes.list.viewslice.list.adapter.MemesAdapterImpl
 
 @Module
-class ListWidgetModule {
+class ListViewSliceModule {
 
     @Provides
     @PerActivity
-    fun provideListWidget(widget: ListWidgetImpl): ListWidget = widget
+    fun provideListViewSlice(viewSlice: ListViewSliceImpl): ListViewSlice = viewSlice
 
     @Provides
     @PerActivity

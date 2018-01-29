@@ -11,8 +11,8 @@ import moj.memes.list.domain.FetchMemesUseCaseImpl
 import moj.memes.list.repository.MemesRepository
 import moj.memes.list.repository.MemesRepositoryImpl
 import moj.memes.list.view.ListActivity
-import moj.memes.list.widget.list.injection.ListWidgetModule
-import moj.memes.list.widget.state.injection.ListStateWidgetModule
+import moj.memes.list.viewslice.list.injection.ListViewSliceModule
+import moj.memes.list.viewslice.state.injection.ListStateViewSliceModule
 import moj.memes.list.viewmodel.ListViewModel
 import moj.memes.list.viewmodel.ListViewModelFactory
 
@@ -21,8 +21,8 @@ import moj.memes.list.viewmodel.ListViewModelFactory
     ListModule.UseCase::class,
     ListModule.ViewModel::class,
     ListModule.View::class,
-    ListStateWidgetModule::class,
-    ListWidgetModule::class
+    ListStateViewSliceModule::class,
+    ListViewSliceModule::class
 ])
 class ListModule {
 

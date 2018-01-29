@@ -1,10 +1,10 @@
-package moj.memes.base.widget
+package moj.memes.base.viewslice
 
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
 import android.view.View
 
-interface Widget : LifecycleObserver {
+interface ViewSlice : LifecycleObserver {
 
     fun init(lifecycle: Lifecycle, view: View)
 }
