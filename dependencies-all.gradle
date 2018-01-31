@@ -1,142 +1,61 @@
-def Group(Closure closure) {
-    closure.delegate = dependencies
-    return closure
-}
+ext.deps = [
 
-ext {
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        // MAIN                                                                                   //
+        ////////////////////////////////////////////////////////////////////////////////////////////
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // CORE                                                                                       //
-    ////////////////////////////////////////////////////////////////////////////////////////////////
+        'libs'       : fileTree(dir: 'libs', include: ['*.jar']),
+        'kotlin'     : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
+        'timber'     : "com.jakewharton.timber:timber:$versions.timber",
+        'support'    : [
+                'compat'      : "com.android.support:support-compat:$versions.suport",
+                'app'         : "com.android.support:appcompat-v7:$versions.suport",
+                'cardView'    : "com.android.support:cardview-v7:$versions.suport",
+                'recyclerView': "com.android.support:recyclerview-v7:$versions.suport",
+                'design'      : "com.android.support:design:$versions.suport",
+        ],
+        'dagger'     : [
+                'dagger'   : "com.google.dagger:dagger:$versions.dagger",
+                'compiler' : "com.google.dagger:dagger-compiler:$versions.dagger",
+                'android'  : "com.google.dagger:dagger-android:$versions.dagger",
+                'support'  : "com.google.dagger:dagger-android-support:$versions.dagger",
+                'processor': "com.google.dagger:dagger-android-processor:$versions.dagger",
+        ],
+        'retrofit'   : [
+                'retrofit': "com.squareup.retrofit2:retrofit:$versions.retrofit",
+                'moshi'   : "com.squareup.retrofit2:converter-moshi:$versions.retrofit",
+                'rx'      : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
+        ],
+        'okHttp'     : [
+                'okHttp' : "com.squareup.okhttp3:okhttp:$versions.okHttp",
+                'logging': "com.squareup.okhttp3:logging-interceptor:$versions.okHttp",
+        ],
+        'moshi'      : "com.squareup.moshi:moshi-kotlin:$versions.moshi",
+        'kotshi'     : [
+                'kotshi'  : "se.ansman.kotshi:api:$versions.kotshi",
+                'compiler': "se.ansman.kotshi:compiler:$versions.kotshi",
+        ],
+        'rx'         : [
+                'android': "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+                'java'   : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+        ],
+        'ac'         : [
+                'java'     : "android.arch.lifecycle:common-java8:$versions.architecture",
+                'extensions': "android.arch.lifecycle:extensions:$versions.architecture",
+                'streams'   : "android.arch.lifecycle:reactivestreams:$versions.architecture",
+                'testing'   : "android.arch.core:core-testing:$versions.architecture",
+        ],
+        'picasso'    : "com.squareup.picasso:picasso:$versions.picasso",
 
-    core = Group {
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        // TESTING                                                                                //
+        ////////////////////////////////////////////////////////////////////////////////////////////
 
-        // Libraries //
-        implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-        // Kotlin //
-        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-
-        // Timber //
-        implementation "com.jakewharton.timber:timber:$timber_version"
-
-        // Dagger //
-        implementation "com.google.dagger:dagger:$dagger_version"
-        kapt "com.google.dagger:dagger-compiler:$dagger_version"
-        implementation "com.google.dagger:dagger-android:$dagger_version"
-        implementation "com.google.dagger:dagger-android-support:$dagger_version"
-        kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // NETWORK                                                                                    //
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    network = Group {
-
-        // Retrofit //
-        implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-        implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
-        implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
-
-        // OkHttp //
-        implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
-        implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
-
-        // Moshi //
-        implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
-        implementation "se.ansman.kotshi:api:$kotshi_version"
-        kapt "se.ansman.kotshi:compiler:$kotshi_version"
-
-        // RxJava //
-        implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_version"
-        implementation "io.reactivex.rxjava2:rxjava:$rxJava_version"
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // REPOSITORY                                                                                 //
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    repository = Group {
-        // Room, Realm, etc.
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // DOMAIN                                                                                   //
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    domain = Group {
-
-        // RxJava //
-        implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_version"
-        implementation "io.reactivex.rxjava2:rxjava:$rxJava_version"
-
-        // Architecture Components //
-        implementation "android.arch.lifecycle:common-java8:$architecture_components_version"
-        implementation "android.arch.lifecycle:extensions:$architecture_components_version"
-        implementation "android.arch.lifecycle:reactivestreams:$architecture_components_version"
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // VIEW MODEL                                                                                 //
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    viewModel = Group {
-
-        // Architecture Components //
-        implementation "android.arch.lifecycle:common-java8:$architecture_components_version"
-        implementation "android.arch.lifecycle:extensions:$architecture_components_version"
-        implementation "android.arch.lifecycle:reactivestreams:$architecture_components_version"
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // VIEW                                                                                       //
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    view = Group {
-
-        // Support Library //
-        implementation "com.android.support:support-compat:$support_library_version"
-        implementation "com.android.support:appcompat-v7:$support_library_version"
-        implementation "com.android.support:cardview-v7:$support_library_version"
-        implementation "com.android.support:recyclerview-v7:$support_library_version"
-        implementation "com.android.support:design:$support_library_version"
-
-        // Architecture Components //
-        implementation "android.arch.lifecycle:common-java8:$architecture_components_version"
-        implementation "android.arch.lifecycle:extensions:$architecture_components_version"
-        implementation "android.arch.lifecycle:reactivestreams:$architecture_components_version"
-
-        // Picasso //
-        implementation "com.squareup.picasso:picasso:$picasso_version"
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // TESTING                                                                                    //
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    testing = Group {
-
-        // JUnit //
-        testImplementation("junit:junit:$junit_version") {
-            exclude group: 'org.hamcrest'
-        }
-
-        // Truth //
-        testImplementation("com.google.truth:truth:$truth_version") {
-            transitive = false
-        }
-
-        // Mockito //
-        testImplementation "org.mockito:mockito-core:$mockito_version"
-        testImplementation "org.mockito:mockito-inline:$mockito_version"
-
-        // Robolectric //
-        testImplementation("org.robolectric:robolectric:$robolectric_version") {
-            exclude group: 'org.assertj'
-        }
-
-        // Architecture Components //
-        testImplementation "android.arch.core:core-testing:$architecture_components_version"
-    }
-}
+        'jUnit'      : "junit:junit:$versions.jUnit",
+        'truth'      : "com.google.truth:truth:$versions.truth",
+        'mockito'    : [
+                'core'  : "org.mockito:mockito-core:$versions.mockito",
+                'inline': "org.mockito:mockito-inline:$versions.mockito",
+        ],
+        'robolectric': "org.robolectric:robolectric:$versions.robolectric",
+]

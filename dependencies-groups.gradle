@@ -1,0 +1,142 @@
+def Group(Closure closure) {
+    closure.delegate = dependencies
+    return closure
+}
+
+ext {
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // CORE                                                                                       //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    core = Group {
+
+        // Libraries //
+        implementation deps.libs
+
+        // Kotlin //
+        implementation deps.kotlin
+
+        // Timber //
+        implementation deps.timber
+
+        // Dagger //
+        implementation deps.dagger.dagger
+        kapt deps.dagger.compiler
+        implementation deps.dagger.android
+        implementation deps.dagger.support
+        kapt deps.dagger.processor
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // NETWORK                                                                                    //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    network = Group {
+
+        // Retrofit //
+        implementation deps.retrofit.retrofit
+        implementation deps.retrofit.moshi
+        implementation deps.retrofit.rx
+
+        // OkHttp //
+        implementation deps.okHttp.okHttp
+        implementation deps.okHttp.logging
+
+        // Moshi //
+        implementation deps.moshi
+        implementation deps.kotshi.kotshi
+        kapt deps.kotshi.compiler
+
+        // RxJava //
+        implementation deps.rx.android
+        implementation deps.rx.java
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // REPOSITORY                                                                                 //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    repository = Group {
+        // Room, Realm, etc.
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // DOMAIN                                                                                   //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    domain = Group {
+
+        // RxJava //
+        implementation deps.rx.android
+        implementation deps.rx.java
+
+        // Architecture Components //
+        implementation deps.ac.java
+        implementation deps.ac.extensions
+        implementation deps.ac.streams
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // VIEW MODEL                                                                                 //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    viewModel = Group {
+
+        // Architecture Components //
+        implementation deps.ac.java
+        implementation deps.ac.extensions
+        implementation deps.ac.streams
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // VIEW                                                                                       //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    view = Group {
+
+        // Support Library //
+        implementation deps.support.compat
+        implementation deps.support.app
+        implementation deps.support.cardView
+        implementation deps.support.recyclerView
+        implementation deps.support.design
+
+        // Architecture Components //
+        implementation deps.ac.java
+        implementation deps.ac.extensions
+        implementation deps.ac.streams
+
+        // Picasso //
+        implementation deps.picasso
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // TESTING                                                                                    //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    testing = Group {
+
+        // JUnit //
+        testImplementation(deps.jUnit) {
+            exclude group: 'org.hamcrest'
+        }
+
+        // Truth //
+        testImplementation(deps.truth) {
+            transitive = false
+        }
+
+        // Mockito //
+        testImplementation deps.mockito.core
+        testImplementation deps.mockito.inline
+
+        // Robolectric //
+        testImplementation(deps.robolectric) {
+            exclude group: 'org.assertj'
+        }
+
+        // Architecture Components //
+        testImplementation deps.ac.testing
+    }
+}

@@ -1,18 +1,10 @@
-apply plugin: 'com.android.feature'
-apply from: '../config-android.gradle'
-apply from: '../dependencies-groups.gradle'
+apply plugin: 'com.android.instantapp'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // DEPENDENCIES                                                                                   //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 dependencies {
-    core()
-    network()
-    repository()
-    viewModel()
-    view()
-    testing()
-
-    implementation project(path: ':base')
+    implementation project(':base')
+    implementation project(':feature-list')
 }

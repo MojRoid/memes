@@ -7,12 +7,12 @@ apply plugin: 'kotlin-android-extensions'
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 android {
-    compileSdkVersion target_sdk_version
-    buildToolsVersion build_tools_version
+    compileSdkVersion versions.targetSdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
-        minSdkVersion min_sdk_version
-        targetSdkVersion target_sdk_version
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
     }
 }
 

@@ -7,8 +7,10 @@ buildscript {
 
     dependencies {
         apply from: 'dependencies-versions.gradle'
+        apply from: 'dependencies-all.gradle'
+
         classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
     }
 }
 

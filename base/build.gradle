@@ -1,13 +1,20 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.feature'
 apply from: '../config-android.gradle'
 apply from: '../config-properties.gradle'
-apply from: '../dependencies-all.gradle'
+apply from: '../dependencies-groups.gradle'
+
+android {
+    baseFeature true
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // DEPENDENCIES                                                                                   //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 dependencies {
+    application project(':app')
+    feature project(':feature-list')
+
     core()
     network()
     repository()
