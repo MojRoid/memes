@@ -7,7 +7,7 @@ Simple MVVM example.
 - 100% Kotlin
 - Architecture components
 - Feature modules
-- Modular views, known as 'widgets'
+- Modular views, known as 'view slices'
 
 **TODO:**
 
