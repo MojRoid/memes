@@ -54,5 +54,5 @@ dependencies {
     view()
 
     implementation project(path: ':base')
-    implementation project(path: ':list')
+    implementation project(path: ':feature-list')
 }
