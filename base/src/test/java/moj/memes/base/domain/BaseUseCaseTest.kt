@@ -7,7 +7,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.BDDMockito.then
 import org.mockito.Mock
-import org.mockito.Mockito.times
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -64,13 +63,13 @@ class BaseUseCaseTest {
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     private fun thenDisposablesShouldBeAddedToTheCompositeDisposable() {
-        then(compositeDisposable).should(times(1)).add(disposable1)
-        then(compositeDisposable).should(times(1)).add(disposable2)
+        then(compositeDisposable).should().add(disposable1)
+        then(compositeDisposable).should().add(disposable2)
         then(compositeDisposable).shouldHaveNoMoreInteractions()
     }
 
     private fun thenTheCompositeDisposableShouldBeCleared() {
-        then(compositeDisposable).should(times(1)).clear()
+        then(compositeDisposable).should().clear()
         then(compositeDisposable).shouldHaveNoMoreInteractions()
     }
 }

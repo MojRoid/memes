@@ -58,7 +58,7 @@ ext {
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     repository = Group {
-        // Room, Realm, etc.
+        // ...
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -118,9 +118,7 @@ ext {
     testing = Group {
 
         // JUnit //
-        testImplementation(deps.jUnit) {
-            exclude group: 'org.hamcrest'
-        }
+        testImplementation(deps.jUnit) { exclude group: 'org.hamcrest' }
 
         // Truth //
         testImplementation(deps.truth) {
@@ -132,9 +130,7 @@ ext {
         testImplementation deps.mockito.inline
 
         // Robolectric //
-        testImplementation(deps.robolectric) {
-            exclude group: 'org.assertj'
-        }
+        testImplementation(deps.robolectric) { exclude group: 'org.assertj' }
 
         // Architecture Components //
         testImplementation deps.ac.testing

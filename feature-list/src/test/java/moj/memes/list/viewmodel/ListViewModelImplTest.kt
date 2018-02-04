@@ -11,7 +11,8 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.BDDMockito.*
+import org.mockito.BDDMockito.given
+import org.mockito.BDDMockito.then
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
 
@@ -84,16 +85,16 @@ class ListViewModelImplTest {
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     private fun thenUseCaseShouldBeExecuted() {
-        then(fetchMemesUseCase).should(times(1)).execute()
+        then(fetchMemesUseCase).should().execute()
     }
 
     private fun thenUseCaseShouldHaveNoMoreInteractions() {
-        then(fetchMemesUseCase).should(times(1)).getLiveData()
+        then(fetchMemesUseCase).should().getLiveData()
         then(fetchMemesUseCase).shouldHaveNoMoreInteractions()
     }
 
     private fun thenObserverShouldReceiveCorrectStates(vararg expected: State) {
-        expected.forEach { then(observer).should(times(1)).onChanged(it) }
+        expected.forEach { then(observer).should().onChanged(it) }
         then(observer).shouldHaveNoMoreInteractions()
     }
 }

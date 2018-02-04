@@ -21,4 +21,5 @@ dependencies {
     viewModel()
     view()
     testing()
+    implementation(deps.jUnit) { exclude group: 'org.hamcrest' } // For rules
 }

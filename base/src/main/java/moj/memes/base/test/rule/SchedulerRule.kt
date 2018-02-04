@@ -1,4 +1,4 @@
-package moj.memes.list.rule
+package moj.memes.base.test.rule
 
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.plugins.RxJavaPlugins
