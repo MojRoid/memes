@@ -4,7 +4,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import moj.memes.base.domain.BaseUseCase
 import moj.memes.list.domain.FetchMemesUseCase.Result
-import moj.memes.list.model.Meme
+import moj.memes.base.model.Meme
 import moj.memes.list.repository.MemesRepository
 import timber.log.Timber
 import javax.inject.Inject

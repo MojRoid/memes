@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="moj.memes.list">
+    package="moj.memes.demo">
 
     <application>
 
         <activity
-            android:name="moj.memes.list.view.ListActivity"
+            android:name="moj.memes.demo.DemoActivity"
             android:theme="@style/BaseAppTheme">
 
             <intent-filter>
@@ -18,12 +18,12 @@
 
                 <data
                     android:host="moj.memes.io"
-                    android:path="/list"
+                    android:path="/demo"
                     android:scheme="https" />
 
             </intent-filter>
 
-            <tools:validation testUrl="https://moj.memes.io/list" />
+            <tools:validation testUrl="https://moj.memes.io/demo" />
 
         </activity>
 

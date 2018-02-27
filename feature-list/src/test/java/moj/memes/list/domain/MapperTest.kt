@@ -5,7 +5,7 @@ import com.squareup.moshi.Moshi
 import moj.memes.base.test.extension.jsonToObject
 import moj.memes.base.network.model.MemesDto
 import moj.memes.base.network.adapter.ApplicationJsonAdapterFactory
-import moj.memes.list.model.Meme
+import moj.memes.base.model.Meme
 import org.junit.Before
 import org.junit.Test
 

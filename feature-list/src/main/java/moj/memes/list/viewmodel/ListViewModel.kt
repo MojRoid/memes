@@ -2,7 +2,7 @@ package moj.memes.list.viewmodel
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
-import moj.memes.list.model.Meme
+import moj.memes.base.model.Meme
 
 abstract class ListViewModel : ViewModel() {
 

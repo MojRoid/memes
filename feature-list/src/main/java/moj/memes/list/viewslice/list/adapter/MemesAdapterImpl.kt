@@ -1,14 +1,19 @@
 package moj.memes.list.viewslice.list.adapter
 
+import android.arch.lifecycle.MutableLiveData
 import android.support.v7.util.DiffUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import moj.memes.base.view.adapter.DiffCallback
 import moj.memes.list.R
-import moj.memes.list.model.Meme
+import moj.memes.base.model.Meme
+import moj.memes.list.viewslice.list.ListViewSlice
 import javax.inject.Inject
 
-class MemesAdapterImpl @Inject constructor(private val diffCallback: DiffCallback) : MemesAdapter() {
+class MemesAdapterImpl @Inject constructor(
+        private val diffCallback: DiffCallback,
+        private val actionLiveData: MutableLiveData<ListViewSlice.Action>
+        ) : MemesAdapter() {
 
     private var memes: MutableList<Meme> = mutableListOf()
 
@@ -19,7 +24,7 @@ class MemesAdapterImpl @Inject constructor(private val diffCallback: DiffCallbac
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemeViewHolder {
         val itemView = LayoutInflater.from(parent.context)
                 .inflate(R.layout.view_holder_meme, parent, false)
-        return MemeViewHolder(itemView)
+        return MemeViewHolder(itemView, actionLiveData)
     }
 
     override fun onBindViewHolder(holder: MemeViewHolder, position: Int) {

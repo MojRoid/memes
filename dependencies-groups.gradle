@@ -15,7 +15,8 @@ ext {
         implementation deps.libs
 
         // Kotlin //
-        implementation deps.kotlin
+        implementation deps.kotlin.lib
+        implementation deps.kotlin.ktx
 
         // Timber //
         implementation deps.timber

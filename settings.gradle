@@ -1,2 +1,3 @@
-include ':app', ':app-instant', ':base',
-        ':feature-list'
+include ':app-installed', ':app-instant',
+        ':base',
+        ':feature-list', 'feature-demo'

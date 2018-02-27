@@ -49,10 +49,9 @@ android {
 dependencies {
     core()
     network()
-    repository()
-    viewModel()
     view()
 
     implementation project(path: ':base')
     implementation project(path: ':feature-list')
+    implementation project(path: ':feature-demo')
 }

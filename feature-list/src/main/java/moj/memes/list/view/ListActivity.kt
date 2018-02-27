@@ -1,31 +1,56 @@
 package moj.memes.list.view
 
-import android.arch.lifecycle.Observer
+import android.content.Intent
 import android.os.Bundle
-import moj.memes.base.extension.initViewSlices
+import moj.memes.base.extension.getContentView
+import moj.memes.base.extension.observe
+import moj.memes.base.model.EXTRA_MEME
+import moj.memes.base.model.Meme
 import moj.memes.base.view.BaseActivity
+import moj.memes.base.view.ScreenRouter
+import moj.memes.base.view.ScreenRouter.Screen.Demo
 import moj.memes.list.R
-import moj.memes.list.viewslice.list.ListViewSlice
-import moj.memes.list.viewslice.state.ListStateViewSlice
 import moj.memes.list.viewmodel.ListViewModel
 import moj.memes.list.viewmodel.ListViewModel.State
+import moj.memes.list.viewslice.list.ListViewSlice
+import moj.memes.list.viewslice.state.ListStateViewSlice
 import javax.inject.Inject
 
 class ListActivity(override val layoutResourceId: Int = R.layout.activity_list) : BaseActivity() {
 
+    @Inject lateinit var screenRouter: ScreenRouter
     @Inject lateinit var viewModel: ListViewModel
     @Inject lateinit var listStateViewSlice: ListStateViewSlice
     @Inject lateinit var listViewSlice: ListViewSlice
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initViewSlices(listStateViewSlice, listViewSlice)
-        setUpViewModel()
+        initViewSlices()
+        setUpViewSliceActionObservers()
+        setUpViewModelStateObservers()
         viewModel.fetchMemes()
     }
 
-    private fun setUpViewModel() {
-        viewModel.getState().observe(this, Observer { it?.let { onStateChanged(it) } })
+    private fun initViewSlices() {
+        listStateViewSlice.init(lifecycle, getContentView())
+        listViewSlice.init(lifecycle, getContentView())
+    }
+
+    private fun setUpViewSliceActionObservers() {
+        observe(listViewSlice.getAction()) { onActionChanged(it) }
+    }
+
+    private fun onActionChanged(action: ListViewSlice.Action) = when (action) {
+        is ListViewSlice.Action.MemeClicked -> startDemoActivity(action.meme)
+    }
+
+    private fun startDemoActivity(meme: Meme) {
+        val intent: Intent? = screenRouter.getScreenIntent(this, Demo)
+        intent?.apply { putExtra(EXTRA_MEME, meme) }?.run { startActivity(this) }
+    }
+
+    private fun setUpViewModelStateObservers() {
+        observe(viewModel.getState()) { onStateChanged(it) }
     }
 
     private fun onStateChanged(state: State) = when (state) {

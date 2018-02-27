@@ -5,7 +5,7 @@ import android.arch.lifecycle.MediatorLiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.Observer
 import moj.memes.list.domain.FetchMemesUseCase
-import moj.memes.list.model.Meme
+import moj.memes.base.model.Meme
 import moj.memes.list.viewmodel.ListViewModel.State
 import org.junit.Before
 import org.junit.Rule

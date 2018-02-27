@@ -1,7 +1,7 @@
 package moj.memes.list.domain
 
 import moj.memes.base.network.model.MemesDto
-import moj.memes.list.model.Meme
+import moj.memes.base.model.Meme
 import javax.inject.Inject
 
 class Mapper @Inject constructor() {

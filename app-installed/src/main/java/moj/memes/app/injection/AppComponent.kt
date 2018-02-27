@@ -12,6 +12,7 @@ import moj.memes.base.network.injection.NetworkModule
 @Component(modules = [
     AndroidSupportInjectionModule::class,
     Bindings::class,
+    AppModule::class,
     BaseModule::class,
     NetworkModule::class
 ])
