@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/BaseAppTheme">
 
-        <activity android:name=".list.view.ListActivity">
+        <activity android:name=".list.view.MemesListActivity">
 
             <intent-filter>
 

@@ -6,7 +6,7 @@ import android.content.Intent
 interface ScreenRouter {
 
     sealed class Screen {
-        object Demo : Screen()
+        object Detail : Screen()
         object List : Screen()
     }
 

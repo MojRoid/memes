@@ -6,5 +6,5 @@ apply plugin: 'com.android.instantapp'
 
 dependencies {
     implementation project(':base')
-    implementation project(':feature-demo')
+    implementation project(':feature-memes-detail')
 }

@@ -13,7 +13,7 @@ android {
 
 dependencies {
     application project(':app-installed')
-    feature project(':feature-demo')
+    feature project(':feature-memes-detail')
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,5 +27,5 @@ dependencies {
     viewModel()
     view()
     testing()
-    implementation(deps.jUnit) { exclude group: 'org.hamcrest' } // For test rules
+    implementation(deps.jUnit) { exclude group: 'org.hamcrest' } // For test rules, TODO: improve
 }

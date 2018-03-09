@@ -52,6 +52,6 @@ dependencies {
     view()
 
     implementation project(path: ':base')
-    implementation project(path: ':feature-list')
-    implementation project(path: ':feature-demo')
+    implementation project(path: ':feature-memes-list')
+    implementation project(path: ':feature-memes-detail')
 }
