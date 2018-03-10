@@ -16,7 +16,7 @@ import moj.memes.list.viewslice.list.ListViewSlice
 import moj.memes.list.viewslice.state.StateViewSlice
 import javax.inject.Inject
 
-class MemesListActivity(override val layoutResourceId: Int = R.layout.activity_list) : BaseActivity() {
+class MemesListActivity(override val layoutResourceId: Int = R.layout.activity_memes_list) : BaseActivity() {
 
     @Inject lateinit var screenRouter: ScreenRouter
     @Inject lateinit var viewModel: ListViewModel

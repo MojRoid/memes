@@ -5,7 +5,7 @@ import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.OnLifecycleEvent
 import android.support.v7.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.activity_memes_list.*
 import moj.memes.base.viewslice.BaseViewSlice
 import moj.memes.base.model.Meme
 import moj.memes.list.viewslice.list.ListViewSlice.Action

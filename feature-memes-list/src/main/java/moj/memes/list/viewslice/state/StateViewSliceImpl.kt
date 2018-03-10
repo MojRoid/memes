@@ -1,6 +1,6 @@
 package moj.memes.list.viewslice.state
 
-import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.activity_memes_list.*
 import moj.memes.base.viewslice.BaseViewSlice
 import javax.inject.Inject
 
