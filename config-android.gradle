@@ -23,3 +23,7 @@ android {
 androidExtensions {
     experimental = true
 }
+
+kapt {
+    mapDiagnosticLocations = true
+}
