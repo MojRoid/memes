@@ -15,8 +15,9 @@ ext.deps = [
 
         'libs'       : fileTree(dir: 'libs', include: ['*.jar']),
         'kotlin'     : [
-                'lib': "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
-                'ktx': "androidx.core:core-ktx:$versions.ktx",
+                'lib'       : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
+                'ktx'       : "androidx.core:core-ktx:$versions.ktx",
+                "coroutines": "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
         ],
         'timber'     : "com.jakewharton.timber:timber:$versions.timber",
         'support'    : [
@@ -52,7 +53,9 @@ ext.deps = [
                 'java'   : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
         ],
         'ac'         : [
-                'java'      : "android.arch.lifecycle:common-java8:$versions.architecture",
+                'viewModel' : "android.arch.lifecycle:viewmodel:$versions.architecture",
+                'liveData'  : "android.arch.lifecycle:livedata:$versions.architecture",
+                'compiler'  : "android.arch.lifecycle:compiler:$versions.architecture",
                 'extensions': "android.arch.lifecycle:extensions:$versions.architecture",
                 'streams'   : "android.arch.lifecycle:reactivestreams:$versions.architecture",
                 'testing'   : "android.arch.core:core-testing:$versions.architecture",

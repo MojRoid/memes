@@ -3,25 +3,54 @@ def Group(Closure closure) {
     return closure
 }
 
+/**
+ All groups below for easy copy/pasting:
+
+ libraries()
+ kotlin()
+ debugging()
+ dagger()
+ networking()
+ rx()
+ architectureComponents()
+ view()
+ testing()
+
+ **/
+
 ext {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    // CORE                                                                                       //
+    // LIBRARIES                                                                                  //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    core = Group {
-
-        // Libraries //
+    libraries = Group {
         implementation deps.libs
+    }
 
-        // Kotlin //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // KOTLIN                                                                                     //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    kotlin = Group {
         implementation deps.kotlin.lib
         implementation deps.kotlin.ktx
+        implementation deps.kotlin.coroutines
+    }
 
-        // Timber //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // DEBUGGING                                                                                  //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    debugging = Group {
         implementation deps.timber
+    }
 
-        // Dagger //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // DAGGER                                                                                      //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    dagger = Group {
         implementation deps.dagger.dagger
         kapt deps.dagger.compiler
         implementation deps.dagger.android
@@ -30,64 +59,41 @@ ext {
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    // NETWORK                                                                                    //
+    // NETWORKING                                                                                 //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    network = Group {
-
-        // Retrofit //
+    networking = Group {
         implementation deps.retrofit.retrofit
         implementation deps.retrofit.moshi
         implementation deps.retrofit.rx
 
-        // OkHttp //
         implementation deps.okHttp.okHttp
         implementation deps.okHttp.logging
 
-        // Moshi //
         implementation deps.moshi
         implementation deps.kotshi.kotshi
         kapt deps.kotshi.compiler
+    }
 
-        // RxJava //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // RX                                                                                         //
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    rx = Group {
         implementation deps.rx.android
         implementation deps.rx.java
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    // REPOSITORY                                                                                 //
+    // ARCHITECTURE COMPONENTS                                                                    //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
-    repository = Group {
-        // ...
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // DOMAIN                                                                                   //
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    domain = Group {
-
-        // RxJava //
-        implementation deps.rx.android
-        implementation deps.rx.java
-
-        // Architecture Components //
-        implementation deps.ac.java
+    architectureComponents = Group {
+        implementation deps.ac.viewModel
+        implementation deps.ac.liveData
         implementation deps.ac.extensions
         implementation deps.ac.streams
-    }
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    // VIEW MODEL                                                                                 //
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    viewModel = Group {
-
-        // Architecture Components //
-        implementation deps.ac.java
-        implementation deps.ac.extensions
-        implementation deps.ac.streams
+        kapt deps.ac.compiler
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -95,45 +101,28 @@ ext {
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     view = Group {
-
-        // Support Library //
         implementation deps.support.compat
         implementation deps.support.app
         implementation deps.support.cardView
         implementation deps.support.recyclerView
         implementation deps.support.design
 
-        // Architecture Components //
-        implementation deps.ac.java
-        implementation deps.ac.extensions
-        implementation deps.ac.streams
-
-        // Picasso //
         implementation deps.picasso
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    // TESTING                                                                                    //
+    // TESTING                                                                                     //
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     testing = Group {
-
-        // JUnit //
         testImplementation(deps.jUnit) { exclude group: 'org.hamcrest' }
+        testImplementation(deps.truth) { transitive = false }
 
-        // Truth //
-        testImplementation(deps.truth) {
-            transitive = false
-        }
-
-        // Mockito //
         testImplementation deps.mockito.core
         testImplementation deps.mockito.inline
 
-        // Robolectric //
         testImplementation(deps.robolectric) { exclude group: 'org.assertj' }
 
-        // Architecture Components //
         testImplementation deps.ac.testing
     }
 }

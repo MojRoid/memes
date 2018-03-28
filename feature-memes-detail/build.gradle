@@ -7,7 +7,7 @@ apply from: '../dependencies-groups.gradle'
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 dependencies {
-    core()
+    kotlin()
     view()
 
     implementation project(path: ':base')

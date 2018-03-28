@@ -7,10 +7,12 @@ apply from: '../dependencies-groups.gradle'
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 dependencies {
-    core()
-    network()
-    repository()
-    viewModel()
+    kotlin()
+    debugging()
+    dagger()
+    networking()
+    rx()
+    architectureComponents()
     view()
     testing()
 

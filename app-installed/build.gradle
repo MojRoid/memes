@@ -47,9 +47,15 @@ android {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 dependencies {
-    core()
-    network()
+    libraries()
+    kotlin()
+    debugging()
+    dagger()
+    networking()
+    rx()
+    architectureComponents()
     view()
+    testing()
 
     implementation project(path: ':base')
     implementation project(path: ':feature-memes-list')

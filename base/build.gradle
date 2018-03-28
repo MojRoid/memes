@@ -21,11 +21,13 @@ dependencies {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 dependencies {
-    core()
-    network()
-    repository()
-    viewModel()
+    kotlin()
+    debugging()
+    dagger()
+    networking()
+    rx()
     view()
     testing()
+
     implementation(deps.jUnit) { exclude group: 'org.hamcrest' } // For test rules, TODO: improve
 }
