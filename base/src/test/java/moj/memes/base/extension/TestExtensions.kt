@@ -1,4 +1,4 @@
-package moj.memes.base.test.extension
+package moj.memes.base.extension
 
 import com.squareup.moshi.Moshi
 import java.io.BufferedReader

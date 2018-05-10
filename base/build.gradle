@@ -28,6 +28,4 @@ dependencies {
     rx()
     view()
     testing()
-
-    implementation(deps.jUnit) { exclude group: 'org.hamcrest' } // For test rules, TODO: improve
 }

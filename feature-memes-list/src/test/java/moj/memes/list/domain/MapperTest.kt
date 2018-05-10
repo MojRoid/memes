@@ -2,7 +2,7 @@ package moj.memes.list.domain
 
 import com.google.common.truth.Truth.assertThat
 import com.squareup.moshi.Moshi
-import moj.memes.base.test.extension.jsonToObject
+import moj.memes.base.extension.jsonToObject
 import moj.memes.base.network.model.MemesDto
 import moj.memes.base.network.adapter.ApplicationJsonAdapterFactory
 import moj.memes.base.model.Meme

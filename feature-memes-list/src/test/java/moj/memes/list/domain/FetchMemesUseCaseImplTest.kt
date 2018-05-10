@@ -7,7 +7,7 @@ import moj.memes.base.network.model.MemesDto
 import moj.memes.list.domain.FetchMemesUseCase.Result
 import moj.memes.base.model.Meme
 import moj.memes.list.repository.MemesRepository
-import moj.memes.base.test.rule.SchedulerRule
+import moj.memes.base.rule.SchedulerRule
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
