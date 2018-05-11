@@ -1,8 +1,8 @@
 buildscript {
     repositories {
+        google()
         jcenter()
         mavenCentral()
-        google()
     }
 
     dependencies {
@@ -16,10 +16,12 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
         mavenCentral()
-        google()
     }
+
+    dependencies { apply from: "$rootProject.rootDir/dependencies-groups.gradle" }
 }
 
 task clean(type: Delete) {

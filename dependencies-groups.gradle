@@ -116,7 +116,7 @@ ext {
 
     testing = Group {
         testImplementation(deps.jUnit) { exclude group: 'org.hamcrest' }
-        testImplementation(deps.truth) { transitive = false }
+        testImplementation deps.truth
 
         testImplementation deps.mockito.core
         testImplementation deps.mockito.inline

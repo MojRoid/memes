@@ -1,7 +1,6 @@
 apply plugin: 'com.android.feature'
 apply from: '../config-android.gradle'
 apply from: '../config-properties.gradle'
-apply from: '../dependencies-groups.gradle'
 
 android {
     baseFeature true

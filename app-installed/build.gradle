@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply from: '../config-android.gradle'
-apply from: '../dependencies-groups.gradle'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // APP NAME AND VERSION                                                                           //
